@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<defaultsMap>
+    <entry>
+        <key>loading_phase</key>
+        <value>Fetching config…</value>
+    </entry>
+    <entry>
+        <key>welcome_message_caps</key>
+        <value>false</value>
+    </entry>
+    <entry>
+        <key>My_New_Message</key>
+        <value>My New Config Value!</value>
+    </entry>
+    <entry>
+        <key>My_New_Second_Message</key>
+        <value>My New Second Config Value!</value>
+    </entry>
+</defaultsMap>

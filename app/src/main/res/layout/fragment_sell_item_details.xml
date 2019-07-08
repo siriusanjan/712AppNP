@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".Profile.AddSellItem.SellItemDetails">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:gravity="center"
+        android:text="@string/add_details"
+        android:textSize="@dimen/header_height"
+        android:textStyle="bold" />
+
+    <Spinner
+        android:id="@+id/spinSelectCategory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:prompt="@string/add_details" />
+
+    <EditText
+        android:id="@+id/txtName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Brand name" />
+
+    <EditText
+        android:id="@+id/txtModel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Model number" />
+
+    <EditText
+        android:id="@+id/txtPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="price"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/txtCondition"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="conditon" />
+    <TextView
+        android:id="@+id/ViewCondition"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="conditon" />
+
+    <EditText
+        android:id="@+id/txtPriceStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Price Status" />
+    <TextView
+        android:id="@+id/ViewPriceStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Price Status" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/detailImage1"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/ic_launcher_background" />
+
+        <ImageView
+            android:id="@+id/detailImage2"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/ic_launcher_background" />
+
+        <ImageView
+            android:id="@+id/detailImage3"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/ic_launcher_background" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnAddDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_margin="10dp"
+        android:text="Add" />
+
+</LinearLayout>

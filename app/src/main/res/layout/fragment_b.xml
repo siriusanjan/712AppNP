@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical">
+<TextView
+    android:id="@+id/txtFromDataBase"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textSize="20dp"
+    android:textStyle="bold"
+    android:text="Hello from Fragment B"/>
+    <EditText
+        android:id="@+id/edtDatabase"
+        android:textStyle="italic"
+        android:hint="mytext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"/>
+    <EditText
+        android:id="@+id/edtDatabaseID"
+        android:textStyle="italic"
+        android:hint="ID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"/>
+    <Button
+        android:id="@+id/btnAddToDataBase"
+        android:textColor="@color/white"
+        android:layout_margin="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+
+        android:text="Add"/>
+    <Button
+        android:id="@+id/btnUpdateToDataBase"
+        android:textColor="@color/white"
+        android:layout_margin="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+
+        android:text="Update"/>
+    <Button
+        android:id="@+id/btnDeleteToDataBase"
+        android:textColor="@color/white"
+        android:layout_margin="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:text="Delete"/>
+</LinearLayout>

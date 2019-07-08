@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">App NP</string>
+    <string name="search_main">Search Items</string>
+    <string name="tab_sell">Sell</string>
+    <string name="tab_deal">Deal</string>
+    <string name="tab_wish">Wish</string>
+    <string name="open">open</string>
+    <string name="close">close</string>
+    <string name="facebook_app_id">859637901064650</string>
+    <string name="fb_login_protocol_scheme">fb859637901064650</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Sign to get more access</string>
+    <string name="menuTopBuy">Top Buy</string>
+    <string name="menuTopChart">Most Buy</string>
+    <string name="menuCategory">Category</string>
+    <string name="menu_BestDeal">Best Deals</string>
+    <string name="menu_top_sell">Top Sell</string>
+    <string name="wish_trending">Trending</string>
+    <string name="wish_my_wish">My Wish</string>
+    <string name="Back"><![CDATA[<< Back]]></string>
+    <string name="todo">TODO</string>
+    <string name="myname">MyName</string>
+    <string name="facebook_status_fmt">Facebook User: %s</string>
+    <string name="firebase_status_fmt">Firebase User: %s</string>
+    <string name="signed_out">Signed Out</string>
+    <string name="google_title_text">Google sign in</string>
+    <string name="sign_out">signout</string>
+    <string name="disconnect">Disconnect</string>
+    <string name="google_status_fmt">Google User: %s</string>
+    <string name="sell_a_goods">Sell A goods</string>
+    <string name="back"><![CDATA[<< Back]]></string>
+    <string name="add_details">Add Details</string>
+    <string name="More">more</string>
+</resources>

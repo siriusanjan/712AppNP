@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="autoText_padding_right">30dp</dimen>
+    <dimen name="header_height">20dp</dimen>
+</resources>

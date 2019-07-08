@@ -1,0 +1,43 @@
+{
+    "category": [
+        {
+                "type": "Tech",
+                "imgurl": "https://www.onlineuniversities.com/wp-content/uploads/improving-tech-literacy.jpg"
+        },
+
+         {
+                        "type": "Art",
+                         "imgurl": "https://images.mapsofindia.com/my-india/2014/11/art.jpg"
+                },
+           {
+                          "type": "Baby",
+                           "imgurl": "http://newbabywallpapers.in/download/crying-baby-images-and-wallpaper/crying-baby-images-and-wallpaper-28.jpg"
+                  },
+          {
+                         "type": "Books",
+                          "imgurl": "https://www.onlineuniversities.com/wp-content/uploads/improving-tech-literacy.jpg"
+
+                 },
+           {
+                          "type": "Business and Industries",
+                           "imgurl": "https://www.onlineuniversities.com/wp-content/uploads/improving-tech-literacy.jpg"
+                  },
+           {
+                          "type": "Camera and Photo",
+                           "imgurl": "https://edge.alluremedia.com.au/m/g/2014/08/retro_cameras_nikon_df.jpg"
+                  },
+          {
+                         "type": "Clothing",
+                          "imgurl": "https://www.onlineuniversities.com/wp-content/uploads/improving-tech-literacy.jpg"
+                 },
+          {
+                         "type": "Collections",
+                          "imgurl": "https://www.onlineuniversities.com/wp-content/uploads/improving-tech-literacy.jpg"
+                 },
+         {
+                        "type": "Electronic",
+                         "imgurl": "https://www.onlineuniversities.com/wp-content/uploads/improving-tech-literacy.jpg"
+                }
+
+  ]
+}

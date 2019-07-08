@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<item android:id="@+id/menu_myWish"
+    android:title="@string/wish_my_wish"/>
+    <item android:id="@+id/menu_trending_wish"
+        android:title="@string/wish_trending"/>
+        <item android:id="@+id/wish_menu_Category"
+            android:title="@string/menuCategory"/>
+</menu>

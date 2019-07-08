@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark">
+       <SearchView
+           android:id="@+id/mySearch"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:iconifiedByDefault="false">
+       </SearchView>
+    </android.support.v7.widget.Toolbar>
+
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tablayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        app:tabIndicatorColor="@color/white"
+        app:tabSelectedTextColor="@android:color/white"
+        app:tabTextColor="@color/tablebcolor">
+
+        <android.support.design.widget.TabItem
+            android:id="@+id/tabBuy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tab_sell" />
+
+        <android.support.design.widget.TabItem
+            android:id="@+id/tabdeal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tab_deal" />
+
+        <android.support.design.widget.TabItem
+            android:id="@+id/tabCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tab_wish" />
+
+    </android.support.design.widget.TabLayout>
+    <FrameLayout
+        android:id="@+id/fr_addMore"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </FrameLayout>
+
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewPagerMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+ />
+
+</LinearLayout>
