@@ -75,7 +75,7 @@ public class ImageSliderAdapter extends PagerAdapter implements Interface {
 
             if (!imglist.get(position).equals("")) {
                 Glide.with(mContext)
-                        .load(StaticVariable.AddItemDetailUrl+imglist.get(position))
+                        .load(StaticVariable.GetAddedDataImage+imglist.get(position))
                         .into(ivPhoto);
             }
 

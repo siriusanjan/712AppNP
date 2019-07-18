@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AdapterTopSellSubData implements Serializable{
-    public static int TOP_SELL=1,Best_Deal=2,Category=3;
+    public static int TOP_SELL=1,Best_Deal=2,Category=3,My_Ads=4,TRENDING=5;
     private String topSellsubText;
     private String imgUrl;
     int type;

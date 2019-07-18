@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginSignUp.VerificationFragment">
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/inputVerifyUserNumbr"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/txtVerifyNumber"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:drawableLeft="@drawable/ic_brand_name_"
+            android:drawablePadding="4dp"
+            android:hint="Phone Number"
+            android:inputType="phone"
+            android:paddingLeft="12dp"
+            android:paddingTop="16dp"
+            android:paddingRight="12dp"
+            android:textSize="16dp" />
+    </android.support.design.widget.TextInputLayout>
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/inputVerificationcode"
+        android:layout_below="@id/inputVerifyUserNumbr"
+        android:visibility="gone"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/txtYourCode"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:drawableLeft="@drawable/ic_brand_name_"
+            android:drawablePadding="4dp"
+            android:hint="Phone Number"
+            android:inputType="phone"
+            android:paddingLeft="12dp"
+            android:paddingTop="16dp"
+            android:paddingRight="12dp"
+            android:textSize="16dp" />
+    </android.support.design.widget.TextInputLayout>
+    <Button
+        android:id="@+id/btnVerifyNumber"
+        android:layout_width="150dp"
+        android:layout_height="36dp"
+        android:layout_gravity="right"
+        android:layout_alignParentRight="true"
+        android:layout_margin="20dp"
+        android:background="@drawable/round_button_post_ads"
+        android:foreground="?attr/selectableItemBackground"
+        android:layout_below="@id/inputVerificationcode"
+        android:drawableStart="@drawable/ic_post_ads_black_24dp"
+        android:elevation="10dp"
+        android:paddingLeft="12dp"
+        android:paddingRight="16dp"
+        android:text="Verify"
+        android:textColor="@color/white"
+        android:textSize="18dp" />
+
+</RelativeLayout>

@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "822933669346-h8pbir5p9o8dll6no5gklerphgj3assa.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "designforlogin.login.com.appnp",
+            "certificate_hash": "00304bd732a8edda6519aca3877b42dff345cfeb"
+          }
+        },
+        {
           "client_id": "822933669346-vrekassm526lottosr762c6ogvsfebti.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

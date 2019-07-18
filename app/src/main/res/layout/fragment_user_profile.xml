@@ -1,33 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/userFragement"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    android:id="@+id/userFragement"
-    android:orientation="vertical"
+    android:background="@color/back"
+    android:clickable="true"
+    android:focusable="true"
     tools:context=".Profile.UserProfile">
 
-    <!-- TODO: Update blank fragment layout -->
-    <include
-        layout="@layout/nav_head"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+    <!-- TODO: Update blank fragment n  -->
 
-    <TextView
-        android:id="@+id/usersNameView"
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/itemDetailsRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:text="@string/hello_blank_fragment" />
+        android:padding="5dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
-    <TextView
-        android:id="@+id/postItems"
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:gravity="center"
-        android:layout_margin="5dp"
-        android:textStyle="bold"
-        android:text="@string/sell_a_goods" />
+        android:layout_height="wrap_content">
 
-</LinearLayout>
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/fr_viewAllAds_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorAccent"
+            app:layout_scrollFlags="scroll|enterAlways" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/addMoreAds"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/ic_add_black_24dp" />
+</android.support.design.widget.CoordinatorLayout>
+

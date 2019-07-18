@@ -6,20 +6,20 @@
     android:background="@color/back"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Sell.SellFragment">
+    tools:context=".TabLayout.Home.TopSell.SellFragment">
 
 
-    <android.support.design.widget.BottomNavigationView
-        android:id="@+id/bm_menu_sell"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="top"
-        android:background="?android:attr/windowBackground"
-        app:itemBackground="@color/white"
-        android:foreground="?attr/selectableItemBackground"
-        app:itemIconTint="@color/botm_nav_select_color"
-        app:itemTextColor="@color/botm_nav_select_color"
-        app:menu="@menu/fr_sell_bt_menu" />
+    <!--<android.support.design.widget.BottomNavigationView-->
+        <!--android:id="@+id/bm_menu_sell"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="top"-->
+        <!--android:background="?android:attr/windowBackground"-->
+        <!--app:itemBackground="@color/white"-->
+        <!--android:foreground="?attr/selectableItemBackground"-->
+        <!--app:itemIconTint="@color/botm_nav_select_color"-->
+        <!--app:itemTextColor="@color/botm_nav_select_color"-->
+        <!--app:menu="@menu/fr_sell_bt_menu" />-->
 
 
     <FrameLayout

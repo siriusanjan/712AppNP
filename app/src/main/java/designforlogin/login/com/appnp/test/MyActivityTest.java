@@ -10,6 +10,8 @@ import android.util.Log;
 import android.widget.FrameLayout;
 
 import designforlogin.login.com.appnp.R;
+import designforlogin.login.com.appnp.TabLayout.FragmentB;
+
 public class MyActivityTest extends AppCompatActivity implements TestInterfaceTest{
 
     FragmentManager fragmentManager;

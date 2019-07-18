@@ -16,14 +16,21 @@ import android.os.Handler;
 import android.os.Looper;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
+import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.widget.Toolbar;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Base64;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -46,7 +53,6 @@ import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 
-import designforlogin.login.com.appnp.LoginActivity;
 import designforlogin.login.com.appnp.MainActivity;
 import designforlogin.login.com.appnp.R;
 import designforlogin.login.com.appnp.StaticVariable;
@@ -67,11 +73,12 @@ public class SellItemDetails extends Fragment implements AdapterView.OnItemSelec
     Context mContext;
     List<String> categoryList;
     ArrayAdapter<String> dataAdapter;
-    EditText txtName, txtModel, txtPrice, txtCondition, txtPriceStatus;
+    EditText txtName, txtModel, txtPrice, txtUsedTime;
     Button btnAddDetails;
     ImageView detailImage1, detailImage2, detailImage3;
-    String itemCategory;
+    String itemCategory, priceStatus, condition;
     Bitmap bitmap1, bitmap2, bitmap3;
+    TextInputLayout txtInputNameLayour, txtInputModelLayout, txtInputPriceLayout;
     private int REQUEST_CODE_IMAGE = 771;
 
 
@@ -82,19 +89,47 @@ public class SellItemDetails extends Fragment implements AdapterView.OnItemSelec
     List<Uri> listImage;
 
     Spinner spinSelectCategory;
+    Toolbar mToolBar;
+    RadioGroup priceStatus_radio_group, condition_radio_group;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_sell_item_details, container, false);
+
+
+        mToolBar = view.findViewById(R.id.fr_AddDetails_toolbar);
+        priceStatus_radio_group = view.findViewById(R.id.priceStatus_radio_group);
+        txtUsedTime = view.findViewById(R.id.txtUsedTime);
+        condition_radio_group = view.findViewById(R.id.condition_radio_group);
+        txtInputNameLayour = view.findViewById(R.id.txtInputNameLayour);
+        txtInputModelLayout = view.findViewById(R.id.txtInputModelLayour);
+        txtInputPriceLayout = view.findViewById(R.id.txtInputPriceLayour);
+        mToolBar.setTitle(getResources().getString(R.string.add_details));
+        mToolBar.setTitleTextColor(getResources().getColor(R.color.white));
+        mToolBar.setNavigationIcon(R.drawable.ic_arrow_back_black_24dp);
+        ((MainActivity) getActivity()).setSupportActionBar(mToolBar);
+        mToolBar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentManager fragmentManager = getFragmentManager();
+                Fragment fragment = fragmentManager.findFragmentById(R.id.fr_addMore);
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.remove(fragment);
+                fragmentTransaction.commit();
+            }
+        });
         spinSelectCategory = view.findViewById(R.id.spinSelectCategory);
         categoryList = new ArrayList<>();
         txtName = view.findViewById(R.id.txtName);
         txtModel = view.findViewById(R.id.txtModel);
         txtPrice = view.findViewById(R.id.txtPrice);
-        txtCondition = view.findViewById(R.id.txtCondition);
-        txtPriceStatus = view.findViewById(R.id.txtPriceStatus);
+        onConditonCheckOfItem();
+
+        txtName.addTextChangedListener(new MyTextWatcher(txtName));
+        txtModel.addTextChangedListener(new MyTextWatcher(txtModel));
+        txtPrice.addTextChangedListener(new MyTextWatcher(txtPrice));
         btnAddDetails = view.findViewById(R.id.btnAddDetails);
         detailImage1 = view.findViewById(R.id.detailImage1);
         detailImage2 = view.findViewById(R.id.detailImage2);
@@ -290,10 +325,12 @@ public class SellItemDetails extends Fragment implements AdapterView.OnItemSelec
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 771) {
-            Uri chosenImageUri = data.getData();
-            listImage.add(chosenImageUri);
-            Log.d("bitmap", "Mybitmap: " + chosenImageUri);
-            changeToBitmap();
+            if (data != null) {
+                Uri chosenImageUri = data.getData();
+                listImage.add(chosenImageUri);
+                Log.d("bitmap", "Mybitmap: " + chosenImageUri);
+                changeToBitmap();
+            }
 
         }
     }
@@ -303,6 +340,7 @@ public class SellItemDetails extends Fragment implements AdapterView.OnItemSelec
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btnAddDetails: {
+                checkRadioPriceStatus();
                 postDetailsToServer();
 
                 return;
@@ -402,9 +440,13 @@ public class SellItemDetails extends Fragment implements AdapterView.OnItemSelec
         protected Void doInBackground(Void... voids) {
             final String name = txtName.getText().toString().trim();
             final String model = txtModel.getText().toString().trim();
-            final String condition = txtCondition.getText().toString().trim();
             final String price = txtPrice.getText().toString().trim();
-            final String priceStatus = txtPriceStatus.getText().toString().trim();
+            final String usedTime;
+            if (txtUsedTime != null) {
+                usedTime = txtUsedTime.getText().toString();
+            } else {
+                usedTime = "New";
+            }
 
             OkHttpClient client = new OkHttpClient();
             final MediaType MEDIA_TYPE_JPG = MediaType.parse("image/jpeg");
@@ -428,6 +470,7 @@ public class SellItemDetails extends Fragment implements AdapterView.OnItemSelec
                     .addFormDataPart("condition", condition)  //Here you can add the fix number of data.
                     .addFormDataPart("price", price)  //Here you can add the fix number of data.
                     .addFormDataPart("category", itemCategory)  //Here you can add the fix number of data.
+                    .addFormDataPart("category", usedTime)  //Here you can add the fix number of data.
                     .addFormDataPart("priceStatus", priceStatus);   //Here you can add the fix number of data.
 
             for (int i = 0; i < listImage.size(); i++) {
@@ -454,8 +497,22 @@ public class SellItemDetails extends Fragment implements AdapterView.OnItemSelec
 
                 Response response = client.newCall(request).execute();
                 if (response.isSuccessful()) {
+                    Handler mainHandler = new Handler(Looper.getMainLooper());
 
-//                    Toast.makeText(mContext, "Successfully posted!", Toast.LENGTH_SHORT).show();
+                    Runnable myRunnable = new Runnable() {
+                        @Override
+                        public void run() {
+                            Toast.makeText(mContext, "Successfully posted!", Toast.LENGTH_SHORT).show();
+                            FragmentManager fragmentManager = getFragmentManager();
+                            Fragment fragment = fragmentManager.findFragmentById(R.id.fr_addMore);
+                            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                            fragmentTransaction.remove(fragment);
+                            fragmentTransaction.commit();
+                        } // This is your code
+                    };
+                    mainHandler.post(myRunnable);
+
+
                 }
               /*  Log.i("RESPONSSE", response.body().string().trim());
 
@@ -479,7 +536,8 @@ public class SellItemDetails extends Fragment implements AdapterView.OnItemSelec
             } catch (IOException e) {
                 e.printStackTrace();
                 Log.i(TAG, "doInBackground: " + e);
-            }/* catch (JSONException e) {
+            }
+            /* catch (JSONException e) {
                 e.printStackTrace();
             }
         */
@@ -571,6 +629,115 @@ public class SellItemDetails extends Fragment implements AdapterView.OnItemSelec
         }
         ///////////////////////////----------------------------------------------------------------------------------------------
     }
+
+    public void checkRadioPriceStatus() {
+        int priceID = priceStatus_radio_group.getCheckedRadioButtonId();
+        int conditionId = condition_radio_group.getCheckedRadioButtonId();
+
+        if (priceID == R.id.fixed_radio_btn) {
+            priceStatus = "Fixed";
+
+        } else {
+            priceStatus = "negotiable";
+        }
+        if (conditionId == R.id.likeNew_radio_btn) {
+            condition = "Like New";
+        } else if (conditionId == R.id.brandNew_radio_btn) {
+            condition = "Brand New";
+        } else {
+            condition = "Used";
+        }
+
+    }
+
+    public void onConditonCheckOfItem() {
+        condition_radio_group.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (checkedId == R.id.brandNew_radio_btn) {
+                    txtUsedTime.setVisibility(View.GONE);
+                    txtUsedTime.setText("");
+                } else {
+                    txtUsedTime.setVisibility(View.VISIBLE);
+
+                }
+
+            }
+        });
+    }
+
+    private void requestFocus(View view) {
+        if (view.requestFocus()) {
+            getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
+        }
+    }
+
+    private class MyTextWatcher implements TextWatcher {
+        private View view;
+
+        private MyTextWatcher(View view) {
+            this.view = view;
+        }
+
+        public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+        }
+
+        public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+        }
+
+        public void afterTextChanged(Editable editable) {
+            switch (view.getId()) {
+                case R.id.txtName:
+                    validateName();
+                    break;
+                case R.id.txtPrice:
+                    validatePrice();
+                    break;
+                case R.id.txtModel:
+                    validateModel();
+                    break;
+            }
+        }
+
+        private boolean validateModel() {
+            if (txtModel.getText().toString().trim().isEmpty()) {
+                txtInputModelLayout.setError(getString(R.string.err_model_number));
+                requestFocus(txtModel);
+                return false;
+            } else {
+                txtInputModelLayout.setErrorEnabled(false);
+            }
+
+            return true;
+        }
+    }
+
+    private boolean validatePrice() {
+        if (txtPrice.getText().toString().trim().isEmpty()) {
+            txtInputPriceLayout.setError(getString(R.string.err_price));
+            requestFocus(txtPrice);
+            return false;
+        } else {
+            txtInputPriceLayout.setErrorEnabled(false);
+        }
+
+        return true;
+    }
+
+
+    private boolean validateName() {
+        if (txtName.getText().toString().trim().isEmpty()) {
+            txtInputNameLayour.setError(getString(R.string.err_msg_name));
+            requestFocus(txtName);
+            return false;
+        } else {
+            txtInputNameLayour.setErrorEnabled(false);
+        }
+
+        return true;
+    }
 }
+
+
 
 

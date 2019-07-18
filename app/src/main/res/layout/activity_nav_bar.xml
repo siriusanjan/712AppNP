@@ -9,6 +9,7 @@
     tools:context=".MainActivity"
     tools:openDrawer="left">
 
+
    <include
         layout="@layout/activity_main"
         android:layout_width="match_parent"
@@ -23,7 +24,9 @@
         android:layout_gravity = "start"
         android:fitsSystemWindows = "true"
         app:headerLayout="@layout/nav_head"
-        app:menu="@menu/fr_buy_bt_menu"
+        app:itemIconTint="@color/checked_nav_menu"
+    app:itemTextColor="@color/checked_nav_menu"
+    app:menu="@menu/navigation_group_menu"
         />
 
 

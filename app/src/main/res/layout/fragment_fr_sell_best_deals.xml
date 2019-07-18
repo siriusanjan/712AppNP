@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Sell.SellSub.BestDeal.FrSellBestDeals">
+    tools:context=".TabLayout.Recent.DealSub.FrSellBestDeals">
 
 
     <android.support.v7.widget.RecyclerView

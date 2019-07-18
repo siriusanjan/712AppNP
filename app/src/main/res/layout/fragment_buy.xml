@@ -1,31 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/white"
+    android:background="@color/back"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Deal.BuyFragment">
+
+    tools:context=".TabLayout.Recent.BuyFragment">
 
 
 
     <!-- TODO: Update blank fragment layout -->
-    <android.support.design.widget.BottomNavigationView
-        android:id="@+id/bm_menu_buy"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="top"
-        android:background="?android:attr/windowBackground"
-        app:itemBackground="@color/white"
-        android:foreground="?attr/selectableItemBackground"
-        app:itemIconTint="@android:color/white"
-        app:itemTextColor="@android:color/black"
-        app:menu="@menu/fr_buy_bt_menu" />
-    <TextView
+    <!--<android.support.design.widget.BottomNavigationView-->
+        <!--android:id="@+id/bm_menu_buy"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="top"-->
+        <!--android:background="?android:attr/windowBackground"-->
+        <!--app:itemBackground="@color/white"-->
+        <!--android:foreground="?attr/selectableItemBackground"-->
+        <!--app:itemIconTint="@android:color/white"-->
+        <!--app:itemTextColor="@android:color/black"-->
+        <!--app:menu="@menu/fr_buy_bt_menu" />-->
+    <LinearLayout
+        android:id="@+id/tab_recent_Fragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical|center_horizontal"
-        android:text="Buy"
-        android:textSize="30sp" />
+        android:orientation="horizontal" />
 
 </FrameLayout>

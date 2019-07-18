@@ -4,9 +4,9 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import designforlogin.login.com.appnp.Deal.BuyFragment;
-import designforlogin.login.com.appnp.Sell.SellFragment;
-import designforlogin.login.com.appnp.Wish.WishFragment;
+import designforlogin.login.com.appnp.TabLayout.Recent.BuyFragment;
+import designforlogin.login.com.appnp.TabLayout.Home.TopSell.SellFragment;
+import designforlogin.login.com.appnp.TabLayout.AllCategory.WishFragment;
 
 public class PagerAdapter extends FragmentPagerAdapter {
     private int numOfTabs;

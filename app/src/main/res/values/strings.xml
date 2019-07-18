@@ -1,13 +1,16 @@
 <resources>
-    <string name="app_name">App NP</string>
+    <string name="app_name">Buy/Sell</string>
     <string name="search_main">Search Items</string>
-    <string name="tab_sell">Sell</string>
-    <string name="tab_deal">Deal</string>
-    <string name="tab_wish">Wish</string>
+    <string name="tab_home">home</string>
+    <string name="tab_Recentl">Recent</string>
+    <string name="tab_Category">All Categoory</string>
     <string name="open">open</string>
     <string name="close">close</string>
-    <string name="facebook_app_id">859637901064650</string>
+    <string name="facebook_app_id">2336697893079062</string>
     <string name="fb_login_protocol_scheme">fb859637901064650</string>
+    <!--<string name="facebook_app_id">[APP_ID]</string>-->
+    <!--<string name="fb_login_protocol_scheme">fb[APP_ID]</string>-->
+
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Sign to get more access</string>
@@ -32,4 +35,36 @@
     <string name="back"><![CDATA[<< Back]]></string>
     <string name="add_details">Add Details</string>
     <string name="More">more</string>
+    <string name="help">Help and Feedback</string>
+    <string name="setting">Settings</string>
+    <string name="category">All Category</string>
+    <string name="trending">Trending</string>
+    <string name="watching">Watching</string>
+    <string name="myAds">My Ads</string>
+    <string name="home">Home</string>
+    <string name="see_details">Details</string>
+    <string name="about_this_item">About this item</string>
+    <string name="about_seller">About Seller</string>
+    <string name="price_Fixed">Fixed</string>
+    <string name="price_negotiable">Negotiable</string>
+    <string name="priceStatus_radio">price Status Group</string>
+    <string name="brandNewConditon_negotiable">Brand New</string>
+    <string name="likeNewCondtion_negotiable">Like New</string>
+    <string name="usedConditon_Fixed">Used</string>
+    <string name="conditon">Condtion</string>
+    <string name="price">Price Status</string>
+    <string name="choose">Choose Type</string>
+    <string name="wish">wish</string>
+    <string name="post_ads">Post ads</string>
+    <string name="instant_validation">(instant validation)</string>
+
+
+
+    <string name="err_msg_name">Enter your Item brand Name</string>
+    <string name="err_model_number">Enter valid model number</string>
+    <string name="err_price">Enter the price</string>
+    <string name="logoTransitionName">transtionImage</string>
+    <string name="sign_Up">Sign Up</string>
+
+
 </resources>
